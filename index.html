@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PABS Facility Services</title>
+    <style>
+        :root {
+            --brand-green: #4C5844;
+            --header-green: #5E6A3E;
+            --pure-white: #FFFFFF;
+            --pure-black: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* ===== LOADING SCREEN ===== */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--brand-green);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-logo {
+            width: 200px;
+            height: auto;
+            animation: pulse 2s infinite;
+        }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            margin: 20px auto;
+            border: 4px solid var(--pure-white);
+            border-top: 4px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-bar-container {
+            width: 300px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .loading-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--pure-white);
+            border-radius: 5px;
+            transition: width 0.5s ease-out;
+        }
+
+        /* ===== ANIMATION KEYFRAMES ===== */
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* ===== TOP CONTACT BAR ===== */
+        .contact-bar {
+            background: var(--header-green);
+            padding: 12px 40px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--pure-white);
+            font-size: 0.9rem;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .contact-group {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        /* ===== NAVIGATION BAR ===== */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background: var(--pure-white);
+            padding: 0 40px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            animation: slideInRight 0.8s 0.2s ease-out backwards;
+        }
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--pure-black);
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brand-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-logo {
+            width: 180px;
+            height: auto;
+            transition: transform 0.3s ease;
+            animation: slideInLeft 0.8s 0.4s ease-out backwards;
+        }
+
+        .nav-logo:hover {
+            transform: rotate(-5deg) scale(1.05);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)),
+                url('https://i.postimg.cc/XvvvDzZV/i-Stock-1166961064-min.webp');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px 0;
+            text-align: center;
+        }
+
+        .service-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            animation: scaleUp 0.8s 0.6s ease-out backwards;
+            transform-origin: center;
+        }
+
+        .service-subtitle {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            animation: slideInLeft 0.8s 0.8s ease-out backwards;
+        }
+
+        .experience-pill {
+            background: var(--brand-green);
+            color: var(--pure-white);
+            padding: 12px 24px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 2rem 0;
+            font-weight: 500;
+            animation: slideInRight 0.8s 1s ease-out backwards;
+        }
+
+        .service-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            opacity: 0;
+            animation: scaleUp 0.8s 1.2s ease-out forwards;
+        }
+
+        /* ===== CTA BUTTON ===== */
+        .cta-main {
+            background: var(--brand-green);
+            color: var(--pure-white);
+            width: 280px;
+            height: 60px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 2rem auto;
+            display: block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+            animation: scaleUp 0.8s 1.4s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255,255,255,0.3),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .cta-main:hover::before {
+            left: 100%;
+        }
+
+        .cta-main:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ===== MASCOT LOGO ===== */
+        .brand-mascot {
+            width: 220px;
+            position: relative;
+            margin-top: -150%;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .brand-mascot:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .contact-bar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 20px;
+                animation: none;
+            }
+
+            .contact-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+                height: 60px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-logo {
+                width: 140px;
+                position: static;
+                margin: 0 auto;
+            }
+
+            .service-title {
+                font-size: 2.4rem;
+                animation: none;
+            }
+
+            .service-subtitle {
+                font-size: 1.8rem;
+                animation: none;
+            }
+
+            .brand-mascot {
+                width: 160px;
+                margin-top: -120%;
+            }
+
+            .content-wrapper {
+                padding-top: 60px;
+            }
+
+            .cta-main {
+                width: 90%;
+                max-width: 280px;
+            }
+
+            .loading-bar-container {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .loading-logo {
+                width: 150px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            .brand-mascot {
+                width: 180px;
+                margin-top: -130%;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <img src="https://i.postimg.cc/Hk8mc178/pab-1.png" alt="PABS Logo" class="loading-logo">
+        <div class="loading-spinner"></div>
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loadingBar"></div>
+        </div>
+    </div>
+
+    <!-- Contact Information Bar -->
+    <div class="contact-bar">
+        <div class="contact-group">
+            <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m4 14h-4v-4h4v4m0-5.5A1.5 1.5 0 0 1 14.5 9h-5A1.5 1.5 0 0 1 8 7.5v-1A1.5 1.5 0 0 1 9.5 5h5A1.5 1.5 0 0 1 16 6.5v1Z"/>
+                </svg>
+                <span>8am-6pm, Mon-Sat</span>
+            </div>
+        </div>
+        <div class="contact-group">
+            <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                <span>0450 198 894</span>
+            </div>
+            <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5l-8-5V6l8 5l8-5v2z"/>
+                </svg>
+                <span>pablo@pabsfacilityservices.com.au</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <img src="https://i.postimg.cc/mgmdsPrQ/Pabs-Letra-PNG-transparent.png" 
+             alt="PABS Logo" 
+             class="nav-logo">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Client Reviews</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="hero-section">
+        <div class="content-wrapper">
+            <h1 class="service-title">
+                RESIDENTIAL, STRATA & COMMERCIAL GARDEN SERVICES
+            </h1>
+            
+            <h2 class="service-subtitle">
+                High-Quality Results, Friendly Service
+            </h2>
+
+            <div class="experience-pill">
+                5+ Years Professional Experience
+            </div>
+
+            <p class="service-description">
+                Looking for professional, reliable garden and outdoor maintenance? Our team delivers high-quality services for Sydney's residential gardens, strata and commercial properties.
+            </p>
+
+            <p class="service-description">
+                We offer a free site inspection before we quote, to ensure our service meets your expectations!
+            </p>
+
+            <button class="cta-main">
+                BOOK A FREE QUOTE<br>
+                <span style="font-size:0.9em">CALL 0450 198 894</span>
+            </button>
+        </div>
+
+        <img src="https://i.postimg.cc/Hk8mc178/pab-1.png" 
+             alt="Brand Mascot" 
+             class="brand-mascot">
+    </section>
+
+    <script>
+        // Loading screen animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingScreen = document.getElementById('loadingScreen');
+            const loadingBar = document.getElementById('loadingBar');
+            let progress = 0;
+            
+            const interval = setInterval(() => {
+                progress += 1;
+                loadingBar.style.width = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loadingScreen.classList.add('hidden');
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 500);
+                }
+            }, 30);
+        });
+    </script>
+</body>
+</html>
