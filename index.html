@@ -752,25 +752,15 @@
         <div class="parallax-layers">
             <div class="parallax-layer depth-1"></div>
             <div class="parallax-layer depth-2">
-                <div class="floating-card expertise">
-                    <span class="card-label">Expertise</span>
-                    <h3>5+ Years</h3>
-                    <p>Professional Experience</p>
-                </div>
             </div>
             <div class="parallax-layer depth-3">
-                <div class="floating-card projects">
-                    <span class="card-label">Projects</span>
-                    <h3>500+</h3>
-                    <p>Successful Completions</p>
-                </div>
             </div>
         </div>
     </div>
 
     <div class="content-container">
         <div class="scrolling-content">
-            <div class="content-wrapper">
+            <div class="content-wrapper-about">
                 <div class="section-header">
                     <span class="overline">About Us</span>
                     <h2>Transforming Sydney's<br>Outdoor Spaces</h2>
@@ -853,6 +843,14 @@
 
 .depth-3 {
     z-index: 3;
+}
+.content-wrapper-about {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 24px 0;
+        text-align: center;
+        margin-left: 100px;
+        
 }
 
 .floating-card {
@@ -990,7 +988,7 @@
 }
 
 .credential-text h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--brand-green);
     margin-bottom: 5px;
 }
@@ -1027,6 +1025,14 @@
         display: flex;
         flex-direction: column;
     }
+    .credentials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s 0.8s ease forwards;
+    }
 
     .visual-container {
         position: relative;
@@ -1050,10 +1056,27 @@
     .credentials {
         grid-template-columns: 1fr;
     }
+    .credential-item{
+      grid-template-columns: 1fr;
+      display: flex;
+    align-items: center;
+    gap: 110px;
+    padding: 10px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    }
 
     .floating-card {
         display: none;
     }
+    .content-wrapper-about {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 24px 0;
+        text-align: center;
+}
 }
 </style>
 <section class="why-choose-section">
@@ -1125,8 +1148,8 @@
 .wc-title {
     font-size: 3.5rem;
     line-height: 1.2;
-    color: #222;
-    margin-bottom: 2em;
+    color: var(--brand-green);
+    margin-bottom: 1em;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
 }
@@ -1270,7 +1293,7 @@
 .location-label {
     position: absolute;
     right: 30px;
-    top: 50%;
+    top: 5%;
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: right center;
     color: white;
@@ -1520,6 +1543,7 @@ document.addEventListener('DOMContentLoaded', () => {
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     position: relative;
     overflow: hidden;
+    padding: 2rem 1rem 2rem 1rem;
 }
 
 .contact-wrapper {
@@ -1535,8 +1559,11 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .info-panel {
-    background: linear-gradient(135deg, var(--brand-green) 0%, #2c3e50 100%);
+    background: linear-gradient(135deg, #4c5844 0%, #4c5844 100%);
     color: white;
+    border-radius: 31px;
+    margin-left: 20px;
+}
 }
 
 .panel-content {
@@ -1713,7 +1740,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .submit-btn {
     grid-column: 1 / -1;
-    background: linear-gradient(135deg, var(--brand-green) 0%, #2c3e50 100%);
+    background: var(--brand-green);
     color: white;
     border: none;
     padding: 1.25rem;
@@ -1820,7 +1847,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <footer class="enterprise-footer">
     <div class="footer-main">
         <div class="footer-grid">
-            <!-- Company Column -->
             <div class="footer-column company-info">
                 <img src="https://i.postimg.cc/Hk8mc178/pab-1.png" alt="PABS Logo" class="footer-logo">
                 <div class="company-about">
@@ -1833,6 +1859,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
                         </a>
                     </div>
+                </div>
+            </div>
+
+            <!-- Company Column -->
+            <div class="footer-column map-section">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424671.94255421066!2d151.20182075!3d-33.7412918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12af78d451b125%3A0x4bdab8b9f3d00deb!2sPab's%20Facility%20Services!5e0!3m2!1sen!2sca!4v1738448312996!5m2!1sen!2sca"></iframe>
                 </div>
             </div>
 
@@ -1883,16 +1916,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5l-8-5V6l8 5l8-5v2z"/></svg>
                         pablo@pabsfacilityservices.com.au
                     </a>
-                    <button class="quote-button">Get a Quote</button>
                 </div>
             </div>
 
             <!-- Map Column -->
-            <div class="footer-column map-section">
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424671.94255421066!2d151.20182075!3d-33.7412918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12af78d451b125%3A0x4bdab8b9f3d00deb!2sPab's%20Facility%20Services!5e0!3m2!1sen!2sca!4v1738448312996!5m2!1sen!2sca"></iframe>
-                </div>
-            </div>
+
         </div>
     </div>
 
@@ -1909,7 +1937,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <style>
 .enterprise-footer {
-    background: #1a1a1a;
+    background: #4c5844;
     color: #fff;
     position: relative;
 }
@@ -1929,11 +1957,10 @@ document.addEventListener('DOMContentLoaded', () => {
 .footer-logo {
     width: 180px;
     margin-bottom: 24px;
-    filter: brightness(0) invert(1);
 }
 
 .company-about p {
-    color: #999;
+    color: #fffff;
     line-height: 1.6;
     margin-bottom: 24px;
 }
@@ -1951,6 +1978,7 @@ document.addEventListener('DOMContentLoaded', () => {
     justify-content: center;
     background: rgba(255,255,255,0.1);
     border-radius: 50%;
+    
     transition: all 0.3s ease;
 }
 
@@ -1981,7 +2009,7 @@ document.addEventListener('DOMContentLoaded', () => {
 .hour-item {
     display: flex;
     justify-content: space-between;
-    color: #999;
+    color: #ffffff;
     padding: 8px 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     transition: all 0.3s ease;
@@ -1994,7 +2022,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .hour-item.closed {
-    color: #ff4444;
+    color: white;
 }
 
 .contact-links {
@@ -2007,7 +2035,7 @@ document.addEventListener('DOMContentLoaded', () => {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #999;
+    color: #ffffff;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -2052,10 +2080,10 @@ document.addEventListener('DOMContentLoaded', () => {
     width: 100%;
     height: 100%;
     border: none;
+    filter: grayscale(0.5);
 }
-
 .footer-bottom {
-    background: #111;
+    background: var(--brand-green);
     padding: 24px 0;
 }
 
@@ -2069,7 +2097,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .copyright {
-    color: #666;
+    color: white;
 }
 
 .bottom-links {
@@ -2078,7 +2106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .bottom-links a {
-    color: #666;
+    color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -2168,7 +2196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let progress = 0;
             
             const interval = setInterval(() => {
-                progress += 1;
+                progress += 100;
                 loadingBar.style.width = `${progress}%`;
                 
                 if (progress >= 100) {
