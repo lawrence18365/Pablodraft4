@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PABS Facility Services</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --brand-green: #4C5844;
@@ -19,6 +23,16 @@
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
+        .red-hat-display-<uniquifier> {
+            font-family: "Red Hat Display", serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+        }
+        .body {
+            font-family: "Red Hat Display", serif;
+        }
+
 
         /* ===== LOADING SCREEN ===== */
         .loading-screen {
@@ -209,18 +223,20 @@
 
         .service-title {
             font-size: 3.5rem;
-            font-weight: 700;
+            font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1.2rem;
             animation: scaleUp 0.8s 0.6s ease-out backwards;
+            font-family: "Red Hat Display", serif;
             transform-origin: center;
         }
 
         .service-subtitle {
             font-size: 2.5rem;
-            font-weight: 500;
+            font-weight: 700;
             margin-bottom: 2rem;
             animation: slideInLeft 0.8s 0.8s ease-out backwards;
+            font-family: "Red Hat Display", serif;
         }
 
         .experience-pill {
@@ -230,8 +246,10 @@
             border-radius: 6px;
             display: inline-block;
             margin: 2rem 0;
-            font-weight: 500;
+            font-weight: 100%;
+            font-family: "Red Hat Display", serif;
             animation: slideInRight 0.8s 1s ease-out backwards;
+            
         }
 
         .service-description {
@@ -251,7 +269,7 @@
             height: 60px;
             border: none;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 200;
             font-size: 1.1rem;
             margin: 2rem auto;
             display: block;
@@ -261,6 +279,7 @@
             animation: scaleUp 0.8s 1.4s ease-out forwards;
             position: relative;
             overflow: hidden;
+            font-family: "Red Hat Display", serif;
         }
 
         .cta-main::before {
