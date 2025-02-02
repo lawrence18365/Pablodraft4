@@ -387,12 +387,7 @@
             }
         }
 
-        @media (min-width: 769px) and (max-width: 1200px) {
-            .brand-mascot {
-                width: 180px;
-                margin-top: -130%;
-            }
-        }
+        
         @media (max-width: 768px) {
     .contact-bar {
         display: flex;
@@ -421,6 +416,9 @@
     .contact-item .contact-icon {
         font-size: 14px; /* Smaller icons on mobile */
     }
+    .brand-mascot {
+                display: none;
+            }
 
     /* Hide email text on very small screens, show only icon */
     @media (max-width: 480px) {
@@ -1583,127 +1581,157 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="section-label">TESTIMONIALS</span>
             <h2>What Our Clients Say</h2>
         </div>
-
         <div class="testimonials-slider">
-    <div class="testimonials-track">
-        <!-- Individual testimonials -->
-        <div class="testimonial-card">
-            <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+            <div class="testimonials-track">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Review" class="google-logo">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "Pablo and his team did a fantastic job of cleaning up our overgrown and unruly garden. His team all worked really hard and took direction well. Pablo is very easy to deal with, super friendly and knowledgable and has reasonable prices too. We will definitely be using Pab's Facility Services again in the future"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Tarryn</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Review" class="google-logo">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "Totally recommend! Pabs was very quick to respond, quick to quote and did a great job on my garden. He and his team also did an awesome job of cleaning up after themselves, which was a massive bonus. Excellent communication and will definitely use them again"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Kate</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Review" class="google-logo">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "Pablo is awesome. I've always been amazed by the incredible hedges across the road from my house. Then I found out Pablo was their Tree Guy. He came and worked on our hedges and he's just finishing pruning our 100 year old frangipani. He's quick, clean and a really great price. 5 stars all the way!"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Paul Thomas</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Review" class="google-logo">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "Pablo always does a good job maintaining my garden. He's reliable, efficient and always friendly!"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Yvonne Blunt</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Review" class="google-logo">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "Pablo and his team are great! Very efficient and neat gardeners, they leave everything clean behind them. They have good plants tips too. If you don't have enough green bins they also lend you big plastic bags and they take them next time they come. Their pressure washing service is also superb. I highly recommend them!"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Alejandro</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Review" class="google-logo">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "Pab and the entire crew are professional, extremely knowledgeable and always provide stellar customer service. Fantastic work every time!"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">John Oubeid</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 7 -->
+                <div class="testimonial-card">
+                    <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Review" class="google-logo">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-content">
+                        "I can't speak highly enough of Pablo and his team! I have had him come and do maintenance in my garden now several times over the last couple of years. He is punctual, hard working, and a really nice person too."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Swinder</div>
+                    </div>
+                </div>
             </div>
-            <blockquote class="testimonial-content">
-                "Exceptional service! PABS transformed our garden into a stunning outdoor space. Their attention to detail and professionalism is outstanding."
-            </blockquote>
-            <div class="testimonial-author">
-                <div class="author-name">Sarah Thompson</div>
-                <div class="author-location">Northern Beaches</div>
+
+            <div class="testimonials-nav">
+                <button class="nav-arrow prev" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonials-dots"></div>
+                <button class="nav-arrow next" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
 
-        <div class="testimonial-card">
-            <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <blockquote class="testimonial-content">
-                "Regular maintenance has never been easier. The team is reliable, thorough, and always goes above and beyond."
-            </blockquote>
-            <div class="testimonial-author">
-                <div class="author-name">Michael Chen</div>
-                <div class="author-location">Eastern Suburbs</div>
-            </div>
+        <div class="view-all-reviews">
+            <a href="https://maps.app.goo.gl/bsNgZwqr3auebEYU9" target="_blank" class="review-button">
+                See all our 50+ reviews on Google
+                <i class="fas fa-external-link-alt"></i>
+            </a>
         </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <blockquote class="testimonial-content">
-                "Professional, punctual, and perfect results every time. Highly recommend PABS for any garden service needs."
-            </blockquote>
-            <div class="testimonial-author">
-                <div class="author-name">Emma Watson</div>
-                <div class="author-location">North Shore</div>
-            </div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <blockquote class="testimonial-content">
-                "Exceptional service! PABS transformed our garden into a stunning outdoor space. Their attention to detail and professionalism is outstanding."
-            </blockquote>
-            <div class="testimonial-author">
-                <div class="author-name">Sarah Thompson</div>
-                <div class="author-location">Northern Beaches</div>
-            </div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <blockquote class="testimonial-content">
-                "Regular maintenance has never been easier. The team is reliable, thorough, and always goes above and beyond."
-            </blockquote>
-            <div class="testimonial-author">
-                <div class="author-name">Michael Chen</div>
-                <div class="author-location">Eastern Suburbs</div>
-            </div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <blockquote class="testimonial-content">
-                "Professional, punctual, and perfect results every time. Highly recommend PABS for any garden service needs."
-            </blockquote>
-            <div class="testimonial-author">
-                <div class="author-name">Emma Watson</div>
-                <div class="author-location">North Shore</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="testimonials-nav">
-        <button class="nav-arrow prev" aria-label="Previous testimonial">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="testimonials-dots"></div>
-        <button class="nav-arrow next" aria-label="Next testimonial">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-    </div>
-</div>
     </div>
 </section>
+
 <style>
-    .testimonials-section {
+.testimonials-section {
     padding: 120px 0;
     background: linear-gradient(180deg, var(--pure-white) 0%, #F4F6F0 100%);
     overflow: hidden;
@@ -1769,7 +1797,6 @@ document.addEventListener('DOMContentLoaded', () => {
     border-radius: 2px;
 }
 
-/* Slider Styles */
 .testimonials-slider {
     position: relative;
     padding: 40px 0;
@@ -1793,8 +1820,19 @@ document.addEventListener('DOMContentLoaded', () => {
     transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
-    height: 420px; /* Fixed height for consistency */
+    height: 470px;
     border: 2px solid var(--brand-green);
+    position: relative;
+}
+
+.google-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 34px;
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
 .testimonial-card:hover {
@@ -1802,11 +1840,14 @@ document.addEventListener('DOMContentLoaded', () => {
     box-shadow: 0 35px 60px -15px rgba(76, 88, 68, 0.25);
 }
 
+.testimonial-card:hover .google-logo {
+    opacity: 1;
+}
+
 .testimonial-rating {
     margin-bottom: 24px;
     display: flex;
     gap: 4px;
-    
 }
 
 .testimonial-rating i {
@@ -1818,7 +1859,6 @@ document.addEventListener('DOMContentLoaded', () => {
     position: relative;
 }
 
-/* For better star border rendering */
 .testimonial-rating i::before {
     position: relative;
     z-index: 1;
@@ -1856,26 +1896,6 @@ document.addEventListener('DOMContentLoaded', () => {
     gap: 16px;
 }
 
-.author-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #F4F6F0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.author-avatar i {
-    font-size: 20px;
-    color: var(--brand-green);
-    opacity: 0.5;
-}
-
-.author-info {
-    flex-grow: 1;
-}
-
 .author-name {
     font-family: "Red Hat Display", serif;
     font-weight: 600;
@@ -1884,21 +1904,6 @@ document.addEventListener('DOMContentLoaded', () => {
     margin-bottom: 4px;
 }
 
-.author-location {
-    color: #666;
-    font-size: 0.875rem;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.author-location i {
-    font-size: 12px;
-    color: var(--brand-green);
-    opacity: 0.7;
-}
-
-/* Navigation Styles */
 .testimonials-nav {
     display: flex;
     align-items: center;
@@ -1907,23 +1912,31 @@ document.addEventListener('DOMContentLoaded', () => {
     margin-top: 60px;
 }
 
+.nav-arrow {
+    width: 56px;
+    height: 56px;
+    border: none;
+    background: var(--pure-white);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 30px rgba(76, 88, 68, 0.15);
+    border: 2px solid var(--brand-green);
+}
+
 .nav-arrow i {
     font-size: 20px;
     color: var(--brand-green);
     transition: all 0.3s ease;
-    z-index: 1;
 }
-.nav-arrow i {
-    font-size: 20px;
-    color: var(--brand-green);
-}
+
 .nav-arrow:hover {
     transform: translateY(-2px);
     box-shadow: 0 20px 40px rgba(76, 88, 68, 0.2);
-}
-
-.nav-arrow:hover::before {
-    opacity: 1;
+    background: var(--brand-green);
 }
 
 .nav-arrow:hover i {
@@ -1974,6 +1987,35 @@ document.addEventListener('DOMContentLoaded', () => {
     opacity: 0.3;
 }
 
+.view-all-reviews {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.review-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: var(--brand-green);
+    color: var(--pure-white);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid var(--brand-green);
+}
+
+.review-button:hover {
+    background: transparent;
+    color: var(--brand-green);
+    transform: translateY(-2px);
+}
+
+.review-button i {
+    font-size: 0.875rem;
+}
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .testimonial-card {
@@ -2018,172 +2060,105 @@ document.addEventListener('DOMContentLoaded', () => {
         width: 48px;
         height: 48px;
     }
+
+    .google-logo {
+        width: 20px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .review-button {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
 }
 </style>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.testimonials-track');
-    const cards = track.querySelectorAll('.testimonial-card');
+    const cards = document.querySelectorAll('.testimonial-card');
     const prevBtn = document.querySelector('.nav-arrow.prev');
     const nextBtn = document.querySelector('.nav-arrow.next');
     const dotsContainer = document.querySelector('.testimonials-dots');
     
     let currentIndex = 0;
-    let slidesToShow;
     let cardWidth;
-    let slideWidth; // Width including margin
-    
-    // Create dots
-    cards.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
+    let cardsPerView;
 
-    function calculateDimensions() {
-        const containerWidth = track.parentElement.clientWidth - 80; // Account for padding
-        
-        if (window.innerWidth > 1200) {
-            slidesToShow = 3;
-            cardWidth = (containerWidth - (30 * 2)) / 3; // Account for two gaps between three cards
-        } else if (window.innerWidth > 768) {
-            slidesToShow = 2;
-            cardWidth = (containerWidth - 30) / 2; // Account for one gap between two cards
+    function updateLayout() {
+        const containerWidth = track.parentElement.clientWidth;
+        if (window.innerWidth <= 768) {
+            cardsPerView = 1;
+        } else if (window.innerWidth <= 1200) {
+            cardsPerView = 2;
         } else {
-            slidesToShow = 1;
-            cardWidth = containerWidth;
+            cardsPerView = 3;
         }
         
-        slideWidth = cardWidth + (window.innerWidth <= 768 ? 0 : 30); // Add margin except on mobile
-        
-        // Update card widths
-        cards.forEach(card => {
-            card.style.width = `${cardWidth}px`;
-        });
-        
-        return { cardWidth, slideWidth };
+        cardWidth = (containerWidth - (40 * 2)) / cardsPerView;
+        track.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
     }
 
-    function updateSlidePosition(animate = true) {
-        if (!animate) {
-            track.style.transition = 'none';
+    function createDots() {
+        const totalDots = Math.ceil(cards.length / cardsPerView);
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === currentIndex) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
         }
-        
-        const { slideWidth } = calculateDimensions();
-        const position = -currentIndex * slideWidth;
-        
-        track.style.transform = `translateX(${position}px)`;
-        
-        if (!animate) {
-            track.offsetHeight; // Force reflow
-            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-        }
-        
-        // Update dots
-        document.querySelectorAll('.dot').forEach((dot, index) => {
+    }
+
+    function updateDots() {
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
-        
-        // Update buttons
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= cards.length - slidesToShow;
     }
 
     function goToSlide(index) {
-        currentIndex = Math.min(Math.max(index, 0), cards.length - slidesToShow);
-        updateSlidePosition(true);
+        currentIndex = index;
+        track.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
+        updateDots();
     }
 
-    // Touch handling
-    let startX;
-    let isDragging = false;
-    let startPos;
-    let currentTranslate = 0;
-
-    function touchStart(e) {
-        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
-        isDragging = true;
-        startPos = currentTranslate;
-        
-        track.style.transition = 'none';
-        if (e.cancelable) {
-            e.preventDefault();
+    function nextSlide() {
+        if (currentIndex >= Math.ceil(cards.length / cardsPerView) - 1) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
         }
+        goToSlide(currentIndex);
     }
 
-    function touchMove(e) {
-        if (!isDragging) return;
-        
-        const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
-        const diff = startX - currentX;
-        const { slideWidth } = calculateDimensions();
-        
-        // Add resistance at bounds
-        if (currentIndex === 0 && diff < 0 || 
-            currentIndex >= cards.length - slidesToShow && diff > 0) {
-            diff /= 2;
+    function prevSlide() {
+        if (currentIndex <= 0) {
+            currentIndex = Math.ceil(cards.length / cardsPerView) - 1;
+        } else {
+            currentIndex--;
         }
-        
-        currentTranslate = startPos - diff;
-        track.style.transform = `translateX(${currentTranslate}px)`;
-        
-        if (e.cancelable) {
-            e.preventDefault();
-        }
+        goToSlide(currentIndex);
     }
-
-    function touchEnd(e) {
-        if (!isDragging) return;
-        
-        const { slideWidth } = calculateDimensions();
-        const movedBy = startPos - currentTranslate;
-        
-        if (Math.abs(movedBy) > slideWidth * 0.2) {
-            if (movedBy > 0) {
-                currentIndex = Math.min(currentIndex + 1, cards.length - slidesToShow);
-            } else {
-                currentIndex = Math.max(currentIndex - 1, 0);
-            }
-        }
-        
-        isDragging = false;
-        track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-        updateSlidePosition(true);
-    }
-
-    // Event Listeners
-    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-
-    // Mouse events
-    track.addEventListener('mousedown', touchStart);
-    track.addEventListener('mousemove', touchMove);
-    track.addEventListener('mouseup', touchEnd);
-    track.addEventListener('mouseleave', touchEnd);
-
-    // Touch events
-    track.addEventListener('touchstart', touchStart, { passive: false });
-    track.addEventListener('touchmove', touchMove, { passive: false });
-    track.addEventListener('touchend', touchEnd);
-
-    // Resize handling
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            calculateDimensions();
-            updateSlidePosition(false);
-        }, 250);
-    });
 
     // Initialize
-    calculateDimensions();
-    updateSlidePosition(false);
-});</script>
+    updateLayout();
+    createDots();
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    window.addEventListener('resize', () => {
+        updateLayout();
+        createDots();
+    });
+
+    // Optional: Auto-advance slides
+    setInterval(nextSlide, 5000);
+});
+</script>
 <section class="why-choose-section">
     <div class="wc-container">
         <span class="wc-overline">WHY CHOOSE US</span>
@@ -2925,6 +2900,7 @@ document.addEventListener('DOMContentLoaded', () => {
     border-radius: 30px;
     padding: 60px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border: 2px solid var(--brand-green);
 }
 
 .form-header {
