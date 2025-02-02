@@ -2565,7 +2565,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="trust-banner">
         <div class="trust-metric">
             <span class="metric-number">5+</span>
-            <span class="metric-label">Years Experience</span>
+            <span class="metric-label">Years In Business</span>
         </div>
         <div class="trust-metric">
             <span class="metric-number">500+</span>
@@ -2671,9 +2671,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="form-footer">
-                        <div class="recaptcha-container">
-                            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-                        </div>
                         <button type="submit" class="submit-btn">
                             <span>Request Quote</span>
                             <svg viewBox="0 0 24 24">
@@ -3157,14 +3154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Get reCAPTCHA response
-        const recaptchaResponse = grecaptcha.getResponse();
-        
-        if (!recaptchaResponse) {
-            alert('Please complete the reCAPTCHA');
-            return;
-        }
-        
+
         const submitBtn = form.querySelector('.submit-btn');
         const originalContent = submitBtn.innerHTML;
         
