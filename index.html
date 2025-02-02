@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     
     <style>
         :root {
@@ -1266,273 +1266,274 @@
     }
 }
 </style>
-<section class="transformations">
-    <div class="transformations-inner">
-        <div class="section-intro">
-            <span class="overline">Our Work</span>
-            <h2>Stunning Transformations</h2>
-            <p>Witness the impact of our professional garden services</p>
-        </div>
 
-        <div class="slider-container">
-            <div class="slide active">
-                <div class="comparison-wrapper">
-                    <div class="comparison-slider">
-                        <div class="before-state">
-                            <img src="/path/to/before.jpg" alt="Before transformation">
-                            <div class="state-label">Before</div>
-                        </div>
-                        <div class="after-state">
-                            <img src="/path/to/after.jpg" alt="After transformation">
-                            <div class="state-label">After</div>
-                            <div class="divider">
-                                <div class="handle"></div>
-                            </div>
-                        </div>
+<style> .transformations {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .transformations-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .comparison-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--brand-green);
+        }
+
+        .comparison-slider {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            touch-action: none;
+        }
+
+        .before-state,
+        .after-state {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .before-state {
+            z-index: 1;
+        }
+
+        .after-state {
+            z-index: 2;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .before-state img,
+        .after-state img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .after-state img {
+            left: -100%;
+            transform: translateX(100%);
+        }
+
+        .state-label {
+            position: absolute;
+            top: 16px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 4px;
+            backdrop-filter: blur(8px);
+            z-index: 2;
+        }
+
+        .before-state .state-label {
+            right: 16px;
+        }
+
+        .after-state .state-label {
+            left: 16px;
+        }
+
+        .divider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #fff;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        .handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: ew-resize;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 4;
+            touch-action: none;
+        }
+
+        .handle::before,
+        .handle::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 12px;
+            background: var(--brand-green);
+        }
+
+        .handle::before {
+            transform: translateX(-3px);
+        }
+
+        .handle::after {
+            transform: translateX(3px);
+        }
+
+        .project-info {
+            padding: 24px;
+            text-align: left;
+        }
+
+        .project-info h3 {
+            font-size: 20px;
+            color: #1A1A1A;
+            margin-bottom: 4px;
+        }
+
+        .project-info p {
+            font-size: 15px;
+            color: #666;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .transformations {
+                padding: 40px 0;
+            }
+
+            .transformations-inner {
+                padding: 0 16px;
+            }
+
+            .handle {
+                width: 32px;
+                height: 32px;
+            }
+
+            .handle::before,
+            .handle::after {
+                height: 10px;
+            }
+
+            .state-label {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+    <section class="transformations">
+        <div class="transformations-inner">
+            <div class="comparison-wrapper">
+                <div class="comparison-slider">
+                    <div class="before-state">
+                        <img src="https://i.postimg.cc/nLL2bQys/de4f7c60-7881-43fd-a159-0355a581b93f.jpg" alt="Before">
+                        <div class="state-label">Before</div>
                     </div>
-                    <div class="slide-info">
-                        <h3>Full Garden Renovation</h3>
-                        <p>Northern Beaches, Sydney</p>
+                    <div class="after-state">
+                        <img src="https://i.postimg.cc/3JgYmM0r/bc0d562c-ff4e-4f09-b8a4-e6c7ed71cd81.jpg" alt="After">
+                        <div class="state-label">After</div>
                     </div>
+                    <div class="divider"></div>
+                    <div class="handle" role="slider" aria-label="Comparison slider"></div>
+                </div>
+                <div class="project-info">
+                    <h3>Full Garden Renovation</h3>
+                    <p>Northern Beaches, Sydney</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="slider-controls">
-            <button class="prev" aria-label="Previous transformation">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M15 18l-6-6 6-6" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <div class="slider-dots"></div>
-            <button class="next" aria-label="Next transformation">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M9 18l6-6-6-6" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-    </div>
-</section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.comparison-slider');
+            const afterState = slider.querySelector('.after-state');
+            const handle = slider.querySelector('.handle');
+            const divider = slider.querySelector('.divider');
+            
+            let isResizing = false;
+            let startX;
 
-<style>
-    .transformations {
-    padding: 80px 0;
-    background: #fff;
-}
+            const getPercentage = (e) => {
+                const rect = slider.getBoundingClientRect();
+                const x = (e.type.includes('mouse') ? e.pageX : e.touches[0].pageX) - rect.left;
+                return Math.min(Math.max(0, (x / rect.width) * 100), 100);
+            };
 
-.transformations-inner {
-    max-width: 800px; /* Reduced from 1400px */
-    margin: 0 auto;
-    padding: 0 24px;
-    text-align: center;
-}
+            const updatePosition = (percent) => {
+                afterState.style.width = `${percent}%`;
+                handle.style.left = `${percent}%`;
+                divider.style.left = `${percent}%`;
+            };
 
-.transformations h2 {
-    font-size: 40px;
-    color: #1A1A1A;
-    margin-bottom: 12px;
-}
+            const resize = (e) => {
+                if (!isResizing) return;
+                e.preventDefault();
+                requestAnimationFrame(() => {
+                    updatePosition(getPercentage(e));
+                });
+            };
 
-.transformations p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 48px;
-}
+            const startResize = (e) => {
+                isResizing = true;
+                startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+                slider.classList.add('dragging');
+                
+                // Prevent text selection during drag
+                document.body.style.userSelect = 'none';
+                document.body.style.webkitUserSelect = 'none';
+                document.body.style.mozUserSelect = 'none';
+                document.body.style.msUserSelect = 'none';
+                
+                // Update position immediately on start
+                updatePosition(getPercentage(e));
+            };
 
-.slider-container {
-    margin: 0 auto;
-}
+            const stopResize = () => {
+                isResizing = false;
+                slider.classList.remove('dragging');
+                
+                // Re-enable text selection
+                document.body.style.userSelect = '';
+                document.body.style.webkitUserSelect = '';
+                document.body.style.mozUserSelect = '';
+                document.body.style.msUserSelect = '';
+            };
 
-.comparison-wrapper {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
+            // Mouse events
+            handle.addEventListener('mousedown', startResize);
+            document.addEventListener('mousemove', resize);
+            document.addEventListener('mouseup', stopResize);
 
-.comparison-slider {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-}
+            // Touch events
+            handle.addEventListener('touchstart', startResize, { passive: false });
+            document.addEventListener('touchmove', resize, { passive: false });
+            document.addEventListener('touchend', stopResize);
 
-.before-state,
-.after-state {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.after-state {
-    width: 50%;
-    overflow: hidden;
-}
-
-.before-state img,
-.after-state img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.state-label {
-    position: absolute;
-    top: 16px;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 6px 12px;
-    border-radius: 4px;
-    backdrop-filter: blur(8px);
-}
-
-.before-state .state-label {
-    right: 16px;
-}
-
-.after-state .state-label {
-    left: 16px;
-}
-
-.divider {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 2px;
-    height: 100%;
-    background: #fff;
-    transform: translateX(-50%);
-}
-
-.handle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    cursor: ew-resize;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.handle::before,
-.handle::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 12px;
-    background: var(--brand-green);
-}
-
-.handle::before {
-    transform: translateX(-3px);
-}
-
-.handle::after {
-    transform: translateX(3px);
-}
-
-.slide-info {
-    padding: 24px;
-    text-align: left;
-}
-
-.slide-info h3 {
-    font-size: 20px;
-    color: #1A1A1A;
-    margin-bottom: 4px;
-}
-
-.slide-info p {
-    font-size: 15px;
-    color: #666;
-    margin: 0;
-}
-
-.slider-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 32px;
-}
-
-.slider-controls button {
-    padding: 12px 24px;
-    border: 1px solid var(--brand-green);
-    background: none;
-    color: var(--brand-green);
-    border-radius: 100px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: all 0.3s ease;
-}
-
-.slider-controls button:hover {
-    background: var(--brand-green);
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    .transformations {
-        padding: 60px 0;
-    }
-
-    .transformations h2 {
-        font-size: 32px;
-    }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.comparison-slider');
-    const afterState = slider.querySelector('.after-state');
-    const handle = slider.querySelector('.handle');
-    const divider = slider.querySelector('.divider');
-    
-    let isResizing = false;
-
-    const resize = (e) => {
-        if (!isResizing) return;
-
-        const rect = slider.getBoundingClientRect();
-        const x = (e.type === 'mousemove' ? e.pageX : e.touches[0].pageX) - rect.left;
-        const percent = Math.min(Math.max(0, x / rect.width * 100), 100);
-
-        afterState.style.width = `${percent}%`;
-    };
-
-    handle.addEventListener('mousedown', () => {
-        isResizing = true;
-    });
-
-    handle.addEventListener('touchstart', () => {
-        isResizing = true;
-    });
-
-    window.addEventListener('mousemove', resize);
-    window.addEventListener('touchmove', resize);
-
-    window.addEventListener('mouseup', () => {
-        isResizing = false;
-    });
-
-    window.addEventListener('touchend', () => {
-        isResizing = false;
-    });
-});
-</script>
+            // Prevent unwanted drag behavior
+            handle.addEventListener('dragstart', (e) => e.preventDefault());
+            
+            // Initialize position
+            updatePosition(50);
+        });
+    </script>
 <!-- Testimonials Section -->
 <section class="testimonials-section">
     <div class="testimonials-container">
@@ -1542,190 +1543,317 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="testimonials-slider">
-            <div class="testimonials-track">
-                <!-- Individual testimonials -->
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ★★★★★
-                    </div>
-                    <blockquote class="testimonial-content">
-                        "Exceptional service! PABS transformed our garden into a stunning outdoor space. Their attention to detail and professionalism is outstanding."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-name">Sarah Thompson</div>
-                        <div class="author-location">Northern Beaches</div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ★★★★★
-                    </div>
-                    <blockquote class="testimonial-content">
-                        "Regular maintenance has never been easier. The team is reliable, thorough, and always goes above and beyond."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-name">Michael Chen</div>
-                        <div class="author-location">Eastern Suburbs</div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ★★★★★
-                    </div>
-                    <blockquote class="testimonial-content">
-                        "Professional, punctual, and perfect results every time. Highly recommend PABS for any garden service needs."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-name">Emma Watson</div>
-                        <div class="author-location">North Shore</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ★★★★★
-                    </div>
-                    <blockquote class="testimonial-content">
-                        "Exceptional service! PABS transformed our garden into a stunning outdoor space. Their attention to detail and professionalism is outstanding."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-name">Sarah Thompson</div>
-                        <div class="author-location">Northern Beaches</div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ★★★★★
-                    </div>
-                    <blockquote class="testimonial-content">
-                        "Regular maintenance has never been easier. The team is reliable, thorough, and always goes above and beyond."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-name">Michael Chen</div>
-                        <div class="author-location">Eastern Suburbs</div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ★★★★★
-                    </div>
-                    <blockquote class="testimonial-content">
-                        "Professional, punctual, and perfect results every time. Highly recommend PABS for any garden service needs."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-name">Emma Watson</div>
-                        <div class="author-location">North Shore</div>
-                    </div>
-                </div>
+    <div class="testimonials-track">
+        <!-- Individual testimonials -->
+        <div class="testimonial-card">
+            <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
             </div>
+            <blockquote class="testimonial-content">
+                "Exceptional service! PABS transformed our garden into a stunning outdoor space. Their attention to detail and professionalism is outstanding."
+            </blockquote>
+            <div class="testimonial-author">
+                <div class="author-name">Sarah Thompson</div>
+                <div class="author-location">Northern Beaches</div>
+            </div>
+        </div>
 
-            <div class="testimonials-nav">
-                <button class="nav-arrow prev" aria-label="Previous testimonial">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M15 18l-6-6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <div class="testimonials-dots"></div>
-                <button class="nav-arrow next" aria-label="Next testimonial">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+        <div class="testimonial-card">
+            <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <blockquote class="testimonial-content">
+                "Regular maintenance has never been easier. The team is reliable, thorough, and always goes above and beyond."
+            </blockquote>
+            <div class="testimonial-author">
+                <div class="author-name">Michael Chen</div>
+                <div class="author-location">Eastern Suburbs</div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <blockquote class="testimonial-content">
+                "Professional, punctual, and perfect results every time. Highly recommend PABS for any garden service needs."
+            </blockquote>
+            <div class="testimonial-author">
+                <div class="author-name">Emma Watson</div>
+                <div class="author-location">North Shore</div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <blockquote class="testimonial-content">
+                "Exceptional service! PABS transformed our garden into a stunning outdoor space. Their attention to detail and professionalism is outstanding."
+            </blockquote>
+            <div class="testimonial-author">
+                <div class="author-name">Sarah Thompson</div>
+                <div class="author-location">Northern Beaches</div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <blockquote class="testimonial-content">
+                "Regular maintenance has never been easier. The team is reliable, thorough, and always goes above and beyond."
+            </blockquote>
+            <div class="testimonial-author">
+                <div class="author-name">Michael Chen</div>
+                <div class="author-location">Eastern Suburbs</div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <blockquote class="testimonial-content">
+                "Professional, punctual, and perfect results every time. Highly recommend PABS for any garden service needs."
+            </blockquote>
+            <div class="testimonial-author">
+                <div class="author-name">Emma Watson</div>
+                <div class="author-location">North Shore</div>
             </div>
         </div>
     </div>
+
+    <div class="testimonials-nav">
+        <button class="nav-arrow prev" aria-label="Previous testimonial">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="testimonials-dots"></div>
+        <button class="nav-arrow next" aria-label="Next testimonial">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+    </div>
 </section>
 <style>
-    /* Testimonials Section Styles */
-.testimonials-section {
+    .testimonials-section {
     padding: 120px 0;
-    background: linear-gradient(to bottom, #fff, #f8f9fa);
+    background: linear-gradient(180deg, var(--pure-white) 0%, #F4F6F0 100%);
     overflow: hidden;
+    position: relative;
+}
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    background: linear-gradient(180deg, rgba(76, 88, 68, 0.03) 0%, rgba(76, 88, 68, 0) 100%);
+    pointer-events: none;
 }
 
 .testimonials-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
+    position: relative;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+    position: relative;
 }
 
 .section-label {
+    font-family: "Red Hat Display", serif;
     font-size: 1rem;
-    letter-spacing: 2px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
     color: var(--brand-green);
     display: block;
     margin-bottom: 16px;
+    opacity: 0.9;
 }
 
 .section-header h2 {
-    font-size: 3rem;
-    color: #222;
+    font-family: "Red Hat Display", serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--header-green);
     margin: 0;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--brand-green);
+    border-radius: 2px;
 }
 
 /* Slider Styles */
 .testimonials-slider {
     position: relative;
     padding: 40px 0;
+    margin: 0 -40px;
 }
 
 .testimonials-track {
     display: flex;
-    gap: 30px;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    padding: 0 40px;
 }
 
 .testimonial-card {
     min-width: calc(33.333% - 20px);
-    background: white;
-    border-radius: 20px;
+    margin-right: 30px;
+    background: var(--pure-white);
+    border-radius: 24px;
     padding: 40px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 25px 50px -12px rgba(76, 88, 68, 0.15);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 420px; /* Fixed height for consistency */
+    border: 2px solid var(--brand-green);
 }
 
 .testimonial-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    box-shadow: 0 35px 60px -15px rgba(76, 88, 68, 0.25);
 }
 
 .testimonial-rating {
-    color: #FFD700;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 4px;
+    
+}
+
+.testimonial-rating i {
+    color: gold;
+    font-size: 20px;
+    margin-right: 2px;
+    -webkit-text-stroke: 1px var(--brand-green);
+    text-stroke: 1px var(--brand-green);
+    position: relative;
+}
+
+/* For better star border rendering */
+.testimonial-rating i::before {
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial-content {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #444;
-    margin: 0 0 30px 0;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #2C3329;
+    margin: 0;
     font-style: italic;
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.testimonial-content::before {
+    content: '"';
+    font-family: "Red Hat Display", serif;
+    font-size: 4rem;
+    line-height: 1;
+    position: absolute;
+    top: -20px;
+    left: -8px;
+    color: var(--brand-green);
+    opacity: 0.1;
 }
 
 .testimonial-author {
-    border-top: 1px solid rgba(0,0,0,0.1);
-    padding-top: 20px;
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(76, 88, 68, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #F4F6F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.author-avatar i {
+    font-size: 20px;
+    color: var(--brand-green);
+    opacity: 0.5;
+}
+
+.author-info {
+    flex-grow: 1;
 }
 
 .author-name {
+    font-family: "Red Hat Display", serif;
     font-weight: 600;
-    color: #222;
+    font-size: 1.125rem;
+    color: var(--header-green);
     margin-bottom: 4px;
 }
 
 .author-location {
     color: #666;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.author-location i {
+    font-size: 12px;
+    color: var(--brand-green);
+    opacity: 0.7;
 }
 
 /* Navigation Styles */
@@ -1734,37 +1862,36 @@ document.addEventListener('DOMContentLoaded', () => {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
-.nav-arrow {
-    width: 48px;
-    height: 48px;
-    border: none;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.nav-arrow i {
+    font-size: 20px;
+    color: var(--brand-green);
     transition: all 0.3s ease;
+    z-index: 1;
 }
-
-.nav-arrow svg {
-    width: 24px;
-    height: 24px;
+.nav-arrow i {
+    font-size: 20px;
     color: var(--brand-green);
 }
-
 .nav-arrow:hover {
-    background: var(--brand-green);
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(76,88,68,0.2);
+    box-shadow: 0 20px 40px rgba(76, 88, 68, 0.2);
 }
 
-.nav-arrow:hover svg {
-    color: white;
+.nav-arrow:hover::before {
+    opacity: 1;
+}
+
+.nav-arrow:hover i {
+    color: var(--pure-white);
+}
+
+.nav-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .testimonials-dots {
@@ -1773,57 +1900,99 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: #ddd;
+    background: #E1E5DC;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--brand-green);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: #C8CFBF;
 }
 
 .dot.active {
     background: var(--brand-green);
-    transform: scale(1.5);
+    transform: scale(1.2);
+}
+
+.dot.active::after {
+    opacity: 0.3;
 }
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .testimonial-card {
         min-width: calc(50% - 15px);
+        height: 400px;
+    }
+    
+    .section-header h2 {
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 768px) {
     .testimonials-section {
-        padding: 60px 0;
+        padding: 80px 0;
     }
 
     .testimonials-container {
         padding: 0 20px;
     }
 
+    .section-header {
+        margin-bottom: 60px;
+    }
+
     .section-header h2 {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
     }
 
     .testimonial-card {
         min-width: calc(100% - 40px);
         margin: 0 20px;
+        height: 380px;
+        padding: 30px;
+    }
+
+    .testimonial-content {
+        font-size: 1rem;
+    }
+
+    .nav-arrow {
+        width: 48px;
+        height: 48px;
     }
 }
 </style>
+
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.testimonials-track');
     const cards = track.querySelectorAll('.testimonial-card');
     const prevBtn = document.querySelector('.nav-arrow.prev');
     const nextBtn = document.querySelector('.nav-arrow.next');
     const dotsContainer = document.querySelector('.testimonials-dots');
-
+    
     let currentIndex = 0;
-    let cardWidth;
     let slidesToShow;
-
+    let cardWidth;
+    let slideWidth; // Width including margin
+    
     // Create dots
     cards.forEach((_, index) => {
         const dot = document.createElement('div');
@@ -1833,76 +2002,146 @@ document.addEventListener('DOMContentLoaded', () => {
         dotsContainer.appendChild(dot);
     });
 
-    // Update slides to show based on viewport
-    function updateSlidesToShow() {
+    function calculateDimensions() {
+        const containerWidth = track.parentElement.clientWidth - 80; // Account for padding
+        
         if (window.innerWidth > 1200) {
             slidesToShow = 3;
+            cardWidth = (containerWidth - (30 * 2)) / 3; // Account for two gaps between three cards
         } else if (window.innerWidth > 768) {
             slidesToShow = 2;
+            cardWidth = (containerWidth - 30) / 2; // Account for one gap between two cards
         } else {
             slidesToShow = 1;
+            cardWidth = containerWidth;
         }
         
-        cardWidth = track.clientWidth / slidesToShow;
-        updateSlidePosition();
+        slideWidth = cardWidth + (window.innerWidth <= 768 ? 0 : 30); // Add margin except on mobile
+        
+        // Update card widths
+        cards.forEach(card => {
+            card.style.width = `${cardWidth}px`;
+        });
+        
+        return { cardWidth, slideWidth };
     }
 
-    function updateSlidePosition() {
-        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    function updateSlidePosition(animate = true) {
+        if (!animate) {
+            track.style.transition = 'none';
+        }
+        
+        const { slideWidth } = calculateDimensions();
+        const position = -currentIndex * slideWidth;
+        
+        track.style.transform = `translateX(${position}px)`;
+        
+        if (!animate) {
+            track.offsetHeight; // Force reflow
+            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        }
         
         // Update dots
         document.querySelectorAll('.dot').forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
+        
+        // Update buttons
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= cards.length - slidesToShow;
     }
 
     function goToSlide(index) {
         currentIndex = Math.min(Math.max(index, 0), cards.length - slidesToShow);
-        updateSlidePosition();
+        updateSlidePosition(true);
     }
 
-    prevBtn.addEventListener('click', () => {
-        goToSlide(currentIndex - 1);
-    });
+    // Touch handling
+    let startX;
+    let isDragging = false;
+    let startPos;
+    let currentTranslate = 0;
 
-    nextBtn.addEventListener('click', () => {
-        goToSlide(currentIndex + 1);
-    });
-
-    // Handle touch events for mobile swipe
-    let startX, isDragging = false, startPos;
-
-    track.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].pageX;
+    function touchStart(e) {
+        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
         isDragging = true;
-        startPos = currentIndex;
-    });
+        startPos = currentTranslate;
+        
+        track.style.transition = 'none';
+        if (e.cancelable) {
+            e.preventDefault();
+        }
+    }
 
-    track.addEventListener('touchmove', (e) => {
+    function touchMove(e) {
         if (!isDragging) return;
         
-        const currentX = e.touches[0].pageX;
+        const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
         const diff = startX - currentX;
+        const { slideWidth } = calculateDimensions();
         
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                goToSlide(startPos + 1);
-            } else {
-                goToSlide(startPos - 1);
-            }
-            isDragging = false;
+        // Add resistance at bounds
+        if (currentIndex === 0 && diff < 0 || 
+            currentIndex >= cards.length - slidesToShow && diff > 0) {
+            diff /= 2;
         }
-    });
+        
+        currentTranslate = startPos - diff;
+        track.style.transform = `translateX(${currentTranslate}px)`;
+        
+        if (e.cancelable) {
+            e.preventDefault();
+        }
+    }
 
-    track.addEventListener('touchend', () => {
+    function touchEnd(e) {
+        if (!isDragging) return;
+        
+        const { slideWidth } = calculateDimensions();
+        const movedBy = startPos - currentTranslate;
+        
+        if (Math.abs(movedBy) > slideWidth * 0.2) {
+            if (movedBy > 0) {
+                currentIndex = Math.min(currentIndex + 1, cards.length - slidesToShow);
+            } else {
+                currentIndex = Math.max(currentIndex - 1, 0);
+            }
+        }
+        
         isDragging = false;
+        track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        updateSlidePosition(true);
+    }
+
+    // Event Listeners
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Mouse events
+    track.addEventListener('mousedown', touchStart);
+    track.addEventListener('mousemove', touchMove);
+    track.addEventListener('mouseup', touchEnd);
+    track.addEventListener('mouseleave', touchEnd);
+
+    // Touch events
+    track.addEventListener('touchstart', touchStart, { passive: false });
+    track.addEventListener('touchmove', touchMove, { passive: false });
+    track.addEventListener('touchend', touchEnd);
+
+    // Resize handling
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            calculateDimensions();
+            updateSlidePosition(false);
+        }, 250);
     });
 
-    // Initialize and handle resize
-    updateSlidesToShow();
-    window.addEventListener('resize', updateSlidesToShow);
-});
-</script>
+    // Initialize
+    calculateDimensions();
+    updateSlidePosition(false);
+});</script>
 <section class="why-choose-section">
     <div class="wc-container">
         <span class="wc-overline">WHY CHOOSE US</span>
@@ -2138,6 +2377,7 @@ document.addEventListener('DOMContentLoaded', () => {
     transform: translateY(-50%);
     transition: all 0.3s ease;
     z-index: 10;
+    border: 2px solid var(--brand-green);
 }
 
 .nav-arrow:hover {
