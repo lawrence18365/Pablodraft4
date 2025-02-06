@@ -2630,7 +2630,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let progress = 0;
             
             const interval = setInterval(() => {
-                progress += 1500;
+                progress += 0.75;
                 loadingBar.style.width = `${progress}%`;
                 
                 if (progress >= 100) {
