@@ -565,17 +565,22 @@
     </div>
 </div>
     <!-- Navigation -->
-    <nav class="nav-container">
+     <nav class="nav-container">
+
         <img src="https://i.postimg.cc/mgmdsPrQ/Pabs-Letra-PNG-transparent.png" 
+
              alt="PABS Logo" 
+
              class="nav-logo">
+
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#services-showcase">Services</a></li>
             <li><a href="#reviews">Client Reviews</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
+
     </nav>
 
     <!-- Main Content -->
@@ -716,7 +721,7 @@ your expectations!
     }
 }
 </style>
- <section class="services-showcase">
+<section id="services-showcase" class="services-showcase">
     <div class="services-grid">
         <!-- Landscape Design -->
         <div class="service-item">
@@ -887,7 +892,7 @@ your expectations!
 
 
 <!-- Testimonials Section -->
-<section class="testimonials-section">
+<section id="reviews" class="testimonials-section">
     <div class="testimonials-container">
         <div class="section-header">
             <span class="section-label">TESTIMONIALS</span>
@@ -1471,7 +1476,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(nextSlide, 5000);
 });
 </script>
-<section class="locations-showcase">
+<section id="gallery" class="locations-showcase">
     <button class="locations-slider-arrow locations-slider-prev">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M15 18l-6-6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1700,7 +1705,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial setup
     updateSlidePosition();
 });</script>
-<section class="contact-section">
+<section id="contact" class="contact-section">
     <div class="contact-container">
         <!-- Info Panel -->
 
@@ -2873,6 +2878,11 @@ document.addEventListener('DOMContentLoaded', () => {
     margin-top: 0px;
 }
 }
+html {
+    scroll-behavior: smooth;
+}
+
+
 </style>
 
 <script>
@@ -2929,5 +2939,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+<script>document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            // Add console.log for debugging
+            console.log('Clicked link:', targetId);
+            console.log('Found section:', targetSection);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                console.error('Section not found:', targetId);
+            }
+        });
+    });
+    
+    // Verify that sections exist
+    const sections = ['home', 'services-showcase', 'reviews', 'gallery', 'contact'];
+    sections.forEach(id => {
+        const section = document.getElementById(id);
+        console.log(`Section ${id} exists:`, !!section);
+    });
+});</script>
+<script src="smooth-scroll.js"></script>
 </body>
 </html> 
