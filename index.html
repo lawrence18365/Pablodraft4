@@ -2641,7 +2641,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 progress += 100;
                 loadingBar.style.width = `${progress}%`;
                 
-                if (progress >= 100) {
+                if (progress >= 0.75) {
                     clearInterval(interval);
                     setTimeout(() => {
                         loadingScreen.classList.add('hidden');
