@@ -2547,28 +2547,29 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });</script>
     <script>
-        // Loading screen animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const loadingScreen = document.getElementById('loadingScreen');
-            const loadingBar = document.getElementById('loadingBar');
-            let progress = 0;
+    // Loading screen animation with slower progression
+    document.addEventListener('DOMContentLoaded', () => {
+        const loadingScreen = document.getElementById('loadingScreen');
+        const loadingBar = document.getElementById('loadingBar');
+        let progress = 0;
+        
+        const interval = setInterval(() => {
+            // Reduced increment from 15 to 5 for slower progression
+            progress += 5;
+            loadingBar.style.width = `${progress}%`;
             
-            const interval = setInterval(() => {
-                progress += 0.75;
-                loadingBar.style.width = `${progress}%`;
-                
-                if (progress >= 0.75) {
-                    clearInterval(interval);
+            if (progress >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
                     setTimeout(() => {
-                        loadingScreen.classList.add('hidden');
-                        setTimeout(() => {
-                            loadingScreen.style.display = 'none';
-                        }, 500);
-                    }, 500);
-                }
-            }, 30);
-        });
-    </script>
+                        loadingScreen.style.display = 'none';
+                    }, 800); // Increased from 500ms to 800ms
+                }, 800); // Increased from 500ms to 800ms
+            }
+        }, 70); // Increased from 30ms to 70ms between increments
+    });
+</script>
     <!-- Privacy Policy Modal -->
 <div id="privacyModal" class="policy-modal">
     <div class="modal-backdrop"></div>
