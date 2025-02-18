@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,31 +118,42 @@
             100% { transform: scale(1); }
         }
 
-        /* ===== TOP CONTACT BAR ===== */
-        /* ===== TOP CONTACT BAR ===== */
+/* ===== TOP CONTACT BAR ===== */
 .contact-bar {
     background: #3c5f2f;
-    padding: 12px 40px;
+    padding: 18px 40px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     color: var(--pure-white);
-    font-size: 0.9rem;
-    animation: slideInLeft 0.8s ease-out;
+    font-size: 1.1rem;
 }
+
 .contact-text {
     margin-right: 20px;
 }
+
 .contact-group {
     display: flex;
     gap: 30px;
     align-items: center;
 }
+
 .contact-item {
     display: flex;
     align-items: center;
     gap: 6px;
+    transition: none !important;
+    pointer-events: none;
 }
+
+.contact-item a {
+    cursor: default;
+    text-decoration: none !important;
+}
+
+
+
 .contact-icon {
     width: 16px;
     height: 16px;
@@ -149,62 +161,64 @@
     align-items: center;
     justify-content: center;
 }
-        /* ===== NAVIGATION BAR ===== */
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-            background: var(--pure-white);
-            padding: 0 40px;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            animation: slideInRight 0.8s 0.2s ease-out backwards;
-        }
 
-        .nav-links {
-            margin-left: auto;
-            display: flex;
-            gap: 32px;
-            list-style: none;
-            padding-left: 0;
-        }
+.contact-email a {
+    color: inherit !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+}
+/* ===== NAVIGATION BAR ===== */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    background: var(--pure-white);
+    padding: 0 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    animation: slideInRight 0.8s 0.2s ease-out backwards;
+    width: 100%; /* Full width to match header */
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--pure-black);
-            font-weight: 500;
-            font-size: 1.1rem;
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+.nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    padding-left: 0;
+}
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--brand-green);
-            transition: width 0.3s ease;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: var(--pure-black);
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand-green);
+    transition: width 0.3s ease;
+}
 
-        .nav-logo {
-            width: 280px;
-            height: auto;
-            transition: transform 0.3s ease;
-            animation: slideInLeft 0.8s 0.4s ease-out backwards;
-        }
+.nav-links a:hover::after {
+    width: 100%;
+}
 
-        
-
-        /* ===== HERO SECTION ===== */
-        /* ===== HERO SECTION ===== */
-/* ===== HERO SECTION ===== */
+.nav-logo {
+    width: auto;
+    height: 140px; /* Adjusted height */
+    transition: transform 0.3s ease;
+    animation: slideInLeft 0.8s 0.4s ease-out backwards;
+    max-width: 100%;
+}
 .hero-section {
     position: relative;
     height: 120vh;
@@ -223,9 +237,38 @@
     padding: 60px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Changed from center */
-    margin-top: 40px; /* Reduced top margin */
+    justify-content: flex-start;
+    margin-top: 40px;
     line-height: 2.5;
+}
+
+/* Medium screens (tablets, smaller laptops) */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        width: 80%;
+        margin-left: 20%;
+        padding: 40px 30px;
+        line-height: 2.2;
+    }
+}
+
+/* Small screens (mobile devices in landscape) */
+@media (max-width: 768px) {
+    .content-wrapper {
+        width: 100%;
+        margin-left: 0;
+        padding: 30px 20px;
+        margin-top: 20px;
+        line-height: 2;
+    }
+}
+
+/* Extra small screens (mobile devices in portrait) */
+@media (max-width: 480px) {
+    .content-wrapper {
+        padding: 20px 15px;
+        line-height: 1.8;
+    }
 }
 
 .service-title {
@@ -244,79 +287,75 @@
 }
 
 .service-description {
-    font-size: 1.6rem;
+    font-size: 1.2rem; /* Reduced from 1.6rem (25% smaller) */
     line-height: 1.5;
     margin: 0.8rem 0;
     text-align: left;
-    font-weight: 600;
+    font-weight: 400; /* Changed from 600 (normal weight) */
 }
-
 .cta-main {
+    /* Button dimensions and positioning */
     width: auto;
-    padding: 15px 40px;
-    margin: 3rem 0; /* Changed to align left with text */
-    text-align: center;
-    align-self: center;
+    min-width: 380px;
+    padding: 20px 50px;
+    margin: 6% 0 2rem -400px;
+    margin-right: 95%;
     position: relative;
     left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 150%;
-}
-
-.brand-mascot {
-    position: absolute;
-    left: 0%;
-    bottom: 0%;
-    width: 220px;
-    z-index: 2;
-}
-.cta-main {
+    
+    /* Visual styling */
     background: #3c5f2f;
     color: black;
-    width: auto;
-    min-width: 380px; /* Increased for wider button */
-    padding: 20px 50px; /* Increased padding for bigger button */
     border: none;
     border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    
+    /* Typography */
+    font-family: "Red Hat Display", serif;
     font-weight: 800;
-    font-size: 0.9rem; /* Smaller font */
+    font-size: 1.3rem; /* Increased from 0.9rem */
     text-transform: uppercase;
+    line-height: 1.3;
+    text-align: center;
+    
+    /* Layout */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Slightly more space between lines */
-    margin: 2rem 0 2rem -400px;
-    margin-right: 95%; /* Keeping your perfect positioning */
-    cursor: pointer;
+    gap: 8px;
+    
+    /* Animation */
     opacity: 0;
     animation: scaleUp 0.8s 1.4s ease-out forwards;
-    position: relative;
-    overflow: hidden;
-    font-family: "Red Hat Display", serif;
-    line-height: 1.3;
-    margin-top: 6%;
+    transform: translateX(-50%);
 }
 
-/* Style for the second line of text */
+/* Style for the second line of text (phone number) */
 .cta-main span {
-    font-size: 0.85rem; /* Even smaller for second line */
+    font-size: 1.3rem; /* Increased from 0.85rem */
     font-weight: 800;
     letter-spacing: 0.2px;
 }
 
+/* Hover effects */
+.cta-main:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-        .cta-main:hover::before {
-            left: 100%;
-        }
-
-        .cta-main:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
+.cta-main:hover::before {
+    left: 100%;
+}
         /* ===== MASCOT LOGO ===== */
-
+.brand-mascot {
+    position: absolute;
+    left: 0%;
+    bottom: 5%;
+    width: 220px;
+    z-index: 2;
+}
 .brand-mascot:hover {
     transform: scale(1.1) rotate(5deg);
 }
@@ -451,15 +490,13 @@
         flex-direction: column;
         align-items: center;
         gap: 5px;
-        font-size: 0.9rem;
+        font-size: 1.3rem;
         margin-left: auto;
         margin-right: auto;
         margin-top: 6%;
     }
 
-    .cta-main span {
-        font-size: 0.85rem;
-    }
+    
 
     /* Hide mascot */
     .brand-mascot {
@@ -536,6 +573,15 @@
         display: none;
     }
 }
+.contact-email {
+    pointer-events: auto !important;
+}
+.contact-email a {
+    color: inherit !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+}
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -561,12 +607,13 @@
             <i class="fas fa-phone-alt contact-icon"></i>
             <span>0450 198 894</span>
         </div>
-        <div class="contact-item">
+        <div class="contact-item contact-email">
             <i class="fas fa-envelope contact-icon"></i>
-            <span>pablo@pabsfacilityservices.com.au</span>
+            <a href="mailto:pablo@pabsfacilityservices.com.au">pablo@pabsfacilityservices.com.au</a>
         </div>
     </div>
 </div>
+
     <!-- Navigation -->
      <nav class="nav-container">
 
@@ -594,7 +641,7 @@
             </h1>
             
             <h2 class="service-subtitle">
-                High-Quality Results, Friendly Service
+                High Quality Results, Friendly Service
             </h2>
 
             
@@ -604,7 +651,7 @@
             </p>
 
             <p class="service-description">
-                Our team has more than 5 years experience delivering high-quality services
+                Our team has more than 5 years' experience delivering high quality services
 for Sydney’s residential gardens, strata and commercial properties
             </p>
             <p class="service-description">
@@ -613,9 +660,9 @@ your expectations!
             </p>
 
             <button class="cta-main">
-                BOOK A FREE QUOTE<br>
-                <span style="font-size:0.9em">CALL 0450 198 894</span>
-            </button>   
+                BOOK A FREE SITE INSPECTION
+                <span>CALL 0450 198 894</span>
+            </button>
         </div>
 
         <img src="https://i.postimg.cc/Hk8mc178/pab-1.png" 
@@ -629,7 +676,7 @@ your expectations!
             <h2 class="wwd-title">Our<br>Services</h2>
         </div>
         <div class="wwd-right">
-            <h3 class="wwd-subtitle">Excellent maintenance, year-round</h3>
+            <h3 class="wwd-subtitle">Excellent Maintenance<br> Year-Round</h3>
             <p class="wwd-text">We keep your outdoor spaces beautiful and well-maintained, so you can relax and enjoy them. Our comprehensive garden and facility services ensure your home, strata, or commercial property always looks its best.</p>
         </div>
     </div>
@@ -664,7 +711,7 @@ your expectations!
 
 .wwd-title {
     font-family: 'Inter', sans-serif;
-    font-size: 64px;
+    font-size: 60px;
     line-height: 0.95;
     font-weight: 500;
     color: #222;
@@ -678,8 +725,8 @@ your expectations!
     font-weight: 500;
     color: #222;
     margin: 0 0 40px 0;
+    text-align: center;
 }
-
 .wwd-text {
     font-family: 'Inter', sans-serif;
     font-size: 100%;
@@ -687,6 +734,8 @@ your expectations!
     color: #555;
     margin: 0;
     max-width: 600px;
+    text-align: center;
+    hyphens: auto; /* Optional for better word breaks */
 }
 
 @media (max-width: 1440px) {
@@ -694,11 +743,7 @@ your expectations!
         padding: 0 100px;
         gap: 60px;
     }
-    
-    .wwd-title {
-        font-size: 90px;
-    }
-    
+
     .wwd-subtitle {
         font-size: 36px;
     }
@@ -724,6 +769,7 @@ your expectations!
     }
 }
 </style>
+<!-- Services Showcase Section -->
 <section id="services-showcase" class="services-showcase">
     <div class="services-grid">
         <!-- Landscape Design -->
@@ -734,7 +780,6 @@ your expectations!
                 <img src="https://i.postimg.cc/vZybTrQ5/Whats-App-Image-2025-01-26-at-7-24-07-PM-1.jpg" alt="Landscape Design Services" />
             </div>
         </div>
-
         <!-- Landscaping -->
         <div class="service-item">
             <div class="service-content">
@@ -743,7 +788,6 @@ your expectations!
                 <img src="https://i.postimg.cc/RhjHv6by/Whats-App-Image-2025-01-26-at-7-22-25-PM-2.jpg" alt="Landscaping Services" />
             </div>
         </div>
-
         <!-- Hardscaping -->
         <div class="service-item">
             <div class="service-content">
@@ -752,7 +796,6 @@ your expectations!
                 <img src="https://i.postimg.cc/VvStyB4X/Whats-App-Image-2025-01-26-at-7-22-27-PM-1.jpg" alt="Hardscaping Services" />
             </div>
         </div>
-
         <!-- Pools -->
         <div class="service-item">
             <div class="service-content">
@@ -761,7 +804,6 @@ your expectations!
                 <img src="https://i.postimg.cc/sg35L4xX/Strata-2-Asquith-2-1.jpg" alt="Pool Services" />
             </div>
         </div>
-
         <!-- Outdoor Living Spaces -->
         <div class="service-item">
             <div class="service-content">
@@ -770,7 +812,6 @@ your expectations!
                 <img src="https://i.postimg.cc/fbZY3dTh/Whats-App-Image-2025-01-26-at-7-09-56-PM-4.jpg" alt="Outdoor Living Spaces" />
             </div>
         </div>
-
         <!-- Irrigation -->
         <div class="service-item">
             <div class="service-content">
@@ -781,7 +822,6 @@ your expectations!
         </div>
     </div>
 </section>
-
 <style>
 .services-showcase {
     width: 100%;
@@ -1103,9 +1143,51 @@ your expectations!
     line-height: 1.2;
     position: relative;
     display: inline-block;
+
+}
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--brand-green);
+    border-radius: 2px;
+}
+.gallery-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
 }
 
-.section-header h2::after {
+.gallery-label {
+    font-family: "Red Hat Display", serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--brand-green);
+    display: block;
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+
+.gallery-header h2 {
+    font-family: "Red Hat Display", serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--header-green);
+    margin: 0;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+    padding-top:3%;
+
+}
+.gallery-header h2::after {
     content: '';
     position: absolute;
     bottom: -16px;
@@ -1140,7 +1222,7 @@ your expectations!
     transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
-    height: 470px;
+    height: 490px;
     border: 2px solid var(--brand-green);
     position: relative;
 }
@@ -1151,8 +1233,7 @@ your expectations!
     right: 20px;
     width: 34px;
     height: auto;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    
 }
 
 .testimonial-card:hover {
@@ -1160,9 +1241,7 @@ your expectations!
     box-shadow: 0 35px 60px -15px rgba(76, 88, 68, 0.25);
 }
 
-.testimonial-card:hover .google-logo {
-    opacity: 1;
-}
+
 
 .testimonial-rating {
     margin-bottom: 24px;
@@ -1346,6 +1425,9 @@ your expectations!
     .section-header h2 {
         font-size: 3rem;
     }
+    .gallery-header h2 {
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1360,8 +1442,14 @@ your expectations!
     .section-header {
         margin-bottom: 60px;
     }
+    .gallery-header {
+        margin-bottom: 60px;
+    }
 
     .section-header h2 {
+        font-size: 2.5rem;
+    }
+    .gallery-header h2 {
         font-size: 2.5rem;
     }
 
@@ -1479,6 +1567,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(nextSlide, 5000);
 });
 </script>
+<section class="gallery-header">
+    <h2>Gallery</h2>
+</section>
 <section id="gallery" class="locations-showcase">
     <button class="locations-slider-arrow locations-slider-prev">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -1510,10 +1601,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="location-label">NORTH SHORE</span>
             </div>
             
-            <div class="location-card">
-                <img src="https://i.postimg.cc/VvStyB4X/Whats-App-Image-2025-01-26-at-7-22-27-PM-1.jpg" alt="Central Coast">
-                <span class="location-label">CENTRAL COAST</span>
-            </div>
+            
         </div>
     </div>
     <button class="locations-slider-arrow locations-slider-next">
@@ -1710,9 +1798,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });</script>
 <section id="contact" class="contact-section">
     <div class="contact-container">
-        <!-- Info Panel -->
-
-        <!-- Form Panel -->
         <div class="form-panel">
             <form id="contactForm" class="contact-form">
                 <div class="form-header">
@@ -1723,36 +1808,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="form-grid">
                     <div class="input-row">
                         <div class="input-group">
-                            <input type="text" id="firstName" required>
+                            <input type="text" id="firstName" required placeholder=" ">
                             <label for="firstName">First Name</label>
                         </div>
                         <div class="input-group">
-                            <input type="text" id="lastName" required>
+                            <input type="text" id="lastName" required placeholder=" ">
                             <label for="lastName">Last Name</label>
                         </div>
                     </div>
 
                     <div class="input-row">
                         <div class="input-group">
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" required placeholder=" ">
                             <label for="email">Email Address</label>
                         </div>
                         <div class="input-group">
-                            <input type="tel" id="phone" required>
+                            <input type="tel" id="phone" required placeholder=" ">
                             <label for="phone">Phone Number</label>
                         </div>
                     </div>
 
                     <div class="input-full">
                         <div class="input-group">
-                            <input type="text" id="address" required>
+                            <input type="text" id="address" required placeholder=" ">
                             <label for="address">Street Address</label>
                         </div>
                     </div>
 
                     <div class="input-row">
                         <div class="input-group">
-                            <input type="text" id="suburb" required>
+                            <input type="text" id="suburb" required placeholder=" ">
                             <label for="suburb">Suburb</label>
                         </div>
                         <div class="input-group">
@@ -1794,14 +1879,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <div class="input-full">
                         <div class="input-group">
-                            <textarea id="message" required rows="4"></textarea>
+                            <textarea id="message" required rows="4" placeholder=" "></textarea>
                             <label for="message">Additional Details</label>
                         </div>
                     </div>
 
                     <div class="form-footer">
                         <button type="submit" class="submit-btn">
-                            <span>Request Quote</span>
+                            <span>Submit</span>
                             <svg viewBox="0 0 24 24">
                                 <path d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11H4z"/>
                             </svg>
@@ -1812,213 +1897,28 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
 </section>
+
 <style>
+:root {
+    --brand-green: #406343;
+}
+
 .contact-section {
     padding: 120px 0;
     background: #f8f9fa;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;  /* Added for better centering */
+    justify-content: center;
 }
 
 .contact-container {
     width: 100%;
-    max-width: 600px;  /* Reduced max-width to better center the form */
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
-/* Info Panel Styles */
-.info-panel {
-    background: linear-gradient(135deg, var(--brand-green) 0%, #2c3e50 100%);
-    border-radius: 30px;
-    padding: 60px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-}
-.trust-section {
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.trust-banner {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.trust-metric {
-    text-align: center;
-}
-
-.metric-number {
-    display: block;
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    background: linear-gradient(to right, #fff, rgba(255,255,255,0.8));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.metric-label {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    line-height: 1.4;
-}
-
-.credentials {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.credential-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-.credential-item:hover {
-    transform: translateX(10px);
-    background: rgba(255,255,255,0.15);
-}
-
-.credential-icon {
-    width: 32px;
-    height: 32px;
-    color: white;
-}
-
-.credential-text h4 {
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-}
-
-.credential-text p {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-.info-panel::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.344 0L13.858 8.485 15.272 9.9l7.9-7.9h-.828zm5.656 0L19.515 8.485 17.343 10.657 28 0h-2.83zM32.656 0L41.142 8.485 39.728 9.9l-7.9-7.9h.828zm5.656 0L47.8 8.485 49.97 10.657 39.313 0h-2.83zM38.344 0L29.858 8.485 27.686 10.657 38.343 0h-2.83zM55.313 0l2.84 2.84-1.415 1.415L51.8 0h2.84zM4.687 0L1.846 2.84 3.26 4.255 8.2 0H4.687zM15.028 0L6.54 8.485 8.716 10.657 17.2 2.173 15.786.757 15.028 0zm24.657 0l8.485 8.485-2.173 2.172-8.484-8.484 1.414-1.416L39.685 0z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
-}
-
-.info-content {
-    position: relative;
-    z-index: 1;
-}
-
-.info-panel h2 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    background: linear-gradient(to right, #fff, rgba(255,255,255,0.8));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.lead-text {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-bottom: 60px;
-}
-
-.info-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 60px;
-}
-
-.info-card {
-    background: rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateX(10px);
-    background: rgba(255,255,255,0.15);
-}
-
-.card-icon {
-    width: 48px;
-    height: 48px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-icon svg {
-    width: 24px;
-    height: 24px;
-    color: white;
-}
-
-.card-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-}
-
-.card-content a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-}
-
-.card-content a:hover {
-    opacity: 1;
-}
-
-.service-areas h3 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.area-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.area-tag {
-    background: rgba(255,255,255,0.1);
-    padding: 8px 16px;
-    border-radius: 100px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.area-tag:hover {
-    background: rgba(255,255,255,0.2);
-    transform: translateY(-2px);
-}
-
-/* Form Panel Styles */
 .form-panel {
     background: white;
     border-radius: 30px;
@@ -2103,7 +2003,9 @@ document.addEventListener('DOMContentLoaded', () => {
 .input-group input:focus ~ label,
 .input-group select:focus ~ label,
 .input-group textarea:focus ~ label,
-.input-group input:not(:placeholder-shown) ~ label {
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group select:not(:placeholder-shown) ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
     top: -10px;
     left: 12px;
     font-size: 0.85rem;
@@ -2190,7 +2092,7 @@ document.addEventListener('DOMContentLoaded', () => {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .submit-btn::before {
@@ -2234,7 +2136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gap: 40px;
     }
 
-    .info-panel,
     .form-panel {
         padding: 40px;
     }
@@ -2243,7 +2144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 @media (max-width: 992px) {
     .contact-container {
         grid-template-columns: 1fr;
-        max-width: 600px;
+        max-width: 800px;
     }
 
     .checkbox-grid {
@@ -2260,15 +2161,10 @@ document.addEventListener('DOMContentLoaded', () => {
         padding: 0 20px;
     }
 
-    .info-panel h2 {
-        font-size: 2.5rem;
-    }
-
     .input-row {
         grid-template-columns: 1fr;
     }
 
-    .info-panel,
     .form-panel {
         padding: 30px;
     }
@@ -2326,11 +2222,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="https://i.postimg.cc/Hk8mc178/pab-1.png" alt="PABS Logo" class="footer-logo">
                 <div class="company-about">
                     <p>Professional garden and facility services across Sydney's residential, strata and commercial properties.</p>
-                    <div class="social-buttons">
-                        <a href="https://www.instagram.com/pabsfacilityservices/" class="social-link">
-                            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
-                        </a>
-                    </div>
                 </div>
                 <img src="https://i.postimg.cc/x8pLsftP/SCA-NSW--Member-Logo-Black.jpg" alt="Strata Community Association Logo" class="sca-logo">
             </div>
@@ -2384,7 +2275,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                     <p class="opening-hours">Monday to Saturday 8am to 6pm</p>
                     <p class="insurance-note">We are fully insured, and committed to work health and safety.</p>
+                                        <div class="social-buttons">
+                        <a href="https://www.instagram.com/pabsfacilityservices/" class="social-link">
+                            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                        </a>
+                        <p class="instagram-about">@pabsfacilityservices</p>
+                    </div>
+
                 </div>
+                
             </div>
         </div>
     </div>
@@ -2436,10 +2335,31 @@ document.addEventListener('DOMContentLoaded', () => {
     line-height: 1.6;
     margin-bottom: 24px;
 }
-
 .social-buttons {
-    display: flex;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.instagram-about {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top:-1%;
+}
+
+
+
+@media (max-width: 768px) {
+  .social-buttons {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instagram-about {
+    font-size: 0.85rem;
+  }
 }
 
 .social-link {
@@ -2486,11 +2406,7 @@ document.addEventListener('DOMContentLoaded', () => {
     transition: all 0.3s ease;
 }
 
-.hour-item:hover {
-    color: #fff;
-    border-color: var(--brand-green);
-    padding-left: 8px;
-}
+
 
 .hour-item.closed {
     color: white;
@@ -2721,7 +2637,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
 
             <h3>Service Guarantees</h3>
-            <p>We guarantee professional, high-quality service delivery. Any concerns will be addressed promptly and professionally.</p>
+            <p>We guarantee professional, high quality service delivery. Any concerns will be addressed promptly and professionally.</p>
 
             <h3>Liability</h3>
             <p>While we take all reasonable care, we are not liable for circumstances beyond our control.</p>
