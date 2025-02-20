@@ -2864,30 +2864,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
-<script>document.addEventListener('DOMContentLoaded', () => {
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            
             const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
             
-            // Add console.log for debugging
-            console.log('Clicked link:', targetId);
-            console.log('Found section:', targetSection);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            } else {
-                console.error('Section not found:', targetId);
+            // Only prevent default for internal links (those starting with #)
+            if (targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
+            // Phone links (tel:) will work normally
         });
     });
+});
     
     // Verify that sections exist
     const sections = ['home', 'services-showcase', 'reviews', 'gallery', 'contact'];
