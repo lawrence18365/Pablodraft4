@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,10 +148,6 @@
     pointer-events: none;
 }
 
-.contact-item a {
-    cursor: default;
-    text-decoration: none !important;
-}
 
 
 
@@ -162,11 +159,7 @@
     justify-content: center;
 }
 
-.contact-email a {
-    color: inherit !important;
-    text-decoration: none !important;
-    cursor: pointer !important;
-}
+
 /* ===== NAVIGATION BAR ===== */
 .nav-container {
     display: flex;
@@ -227,7 +220,7 @@
     background-position: center;
     margin-top: -270px;
     padding-top: 220px;
-    z-index: -1;
+    
 }
 
 .content-wrapper {
@@ -581,7 +574,15 @@
     text-decoration: none !important;
     cursor: pointer !important;
 }
+}
+a[href^="tel:"] {
+    text-decoration: none !important;
+    color: inherit;
+}
 
+.cta-main {
+    cursor: pointer;
+}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -663,10 +664,10 @@ for Sydney’s residential gardens, strata and commercial properties
 your expectations!
             </p>
 
-           <a href="tel:0450198894" class="cta-main">
+           <button class="cta-main" type="button" onclick="window.location.href='tel:0450198894'">
     BOOK A FREE SITE INSPECTION
     <span>CALL 0450 198 894</span>
-</a>
+</button>
 
         </div>
 
@@ -2437,10 +2438,6 @@ document.addEventListener('DOMContentLoaded', () => {
     height: 20px;
 }
 
-.contact-item:hover {
-    color: #fff;
-    transform: translateX(8px);
-}
 
 .opening-hours {
     color: #ffffff;
